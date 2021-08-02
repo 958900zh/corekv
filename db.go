@@ -1,6 +1,7 @@
 package corekv
 
 import (
+	"fmt"
 	"github.com/hardcore-os/corekv/iterator"
 	"github.com/hardcore-os/corekv/lsm"
 	"github.com/hardcore-os/corekv/utils"
@@ -42,6 +43,7 @@ func Open(options *Options) *DB {
 	go db.vlog.StartGC()
 	// 启动 info 统计过程
 	go db.stats.StartStats()
+	fmt.Println("hello")
 	return db
 }
 
